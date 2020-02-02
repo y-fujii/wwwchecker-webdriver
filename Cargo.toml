@@ -1,0 +1,20 @@
+[package]
+name = "wwwchecker-webdriver"
+version = "0.1.0"
+authors = ["Yasuhiro Fujii <y-fujii@mimosa-pudica.net>"]
+edition = "2018"
+
+[profile.dev]
+debug = false
+
+[profile.release]
+panic = "abort"
+lto = true
+codegen-units = 1
+incremental = false
+
+[dependencies]
+serde = { version = "*", features = ["derive"] }
+serde_json = "*"
+base64 = "*"
+reqwest = { version = "*", features = ["blocking", "json"] }
